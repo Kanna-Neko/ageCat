@@ -1,4 +1,4 @@
-package ageapi
+package ageApi
 
 import (
 	"errors"

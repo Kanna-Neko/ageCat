@@ -1,7 +1,7 @@
 package main
 
 import (
-	ageapi "ageCat/ageApi"
+	"ageCat/ageApi"
 	"ageCat/email"
 	"fmt"
 	"log"
@@ -29,7 +29,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	me := ageapi.AgeHandleConstructor(account, password)
+	me := ageApi.AgeHandleConstructor(account, password)
 	_, err = me.UpdateData()
 	if err != nil {
 		log.Fatal(err)
@@ -44,7 +44,7 @@ func main() {
 		if data != nil {
 			var info = emailTemplate
 			for i := 0; i < len(data); i++ {
-				info += "<p>" + strconv.Itoa(i+1) + ". "+ data[i].Title + " " + data[i].NewTitle + "</p><br/>"
+				info += "<p>" + strconv.Itoa(i+1) + ". " + data[i].Title + " " + data[i].NewTitle + "</p><br/>"
 			}
 			err := email.SendEmail([]string{path}, path, emailPassword, smtpPath, smtpPort, []byte(info))
 			for err != nil {
