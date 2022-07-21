@@ -1,0 +1,13 @@
+version: '3'
+services:
+  age-cat:
+    container_name: ageCat
+    build: .
+    environment:
+      account:
+      password: 
+      email: 
+      emailPassword: 
+      smtp: smtp.gmail.com
+      smtpPort: 587
+
